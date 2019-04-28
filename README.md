@@ -4,7 +4,7 @@ The front end section for our application Oasis. Oasis is a travel community app
 http://nameless-crag-43595.herokuapp.com/
 
 ## Back-End Section
-Our backend code for this project can be found here: https://github.com/brandonmcastillo/Oasis-BackEnd
+Our backend code for this project can be found here: https://github.com/coderkarma/Wayfarer-BackEnd
 
 ## Technologies Used
 - HTML
