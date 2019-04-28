@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Oasis
+The front end section for our application Oasis. Oasis is a travel community application where users can share tips about their favorite locations around the world. Oasis was created by Brandon Castillo, Karma Drukpa, Amberly Wang and Michael Claus. Users who are logged in can see their profile and their posts. They can edit their profile, create new posts, edit posts, and delete posts. Users can also see different cities and the posts for each specific city.
 
-## Available Scripts
+http://nameless-crag-43595.herokuapp.com/
 
-In the project directory, you can run:
+## Back-End Section
+Our backend code for this project can be found here: https://github.com/brandonmcastillo/Oasis-BackEnd
 
-### `npm start`
+## Technologies Used
+- HTML
+- CSS
+- Javascript
+- React.js
+- React Bootstrap
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Our Approach and Process
+Since this project uses React.js, we decided we needed to first plan out the structure of our components and establish a baseline for how the components and data would interact wih each other. It was important to start planning our components out before we started coding so that we wouldn't run into organization problems as we started coding.
+![](https://trello-attachments.s3.amazonaws.com/5c7d6628351a436652f4b9ac/5c7d997c3eb06d4ec83b3b10/6460ca0200169a84858620d58d8f1289/IMG_5454_(2).jpg)
+Once we had our basic file structure set up and added some hardcoded dummy text, we started to gradually integrate the information from the database to our front end application. We worked with the city and user entities separately, first getting them to render on the page, and then populating the pages with user posts.
+<br />
+After we had rendered everything, we started to implement the CRUD methods onto our front end application. As we worked on our application's functionality, we also paid attention to the styling of the page and structured our grids and responsiveness as we went coded. We used the project sprints as a guideline for what features we needed to include and how users should interact with them.
+## Challenges and Successes
+Some challenges for us were:
+* User validation
+* Combining React.js with Bootstrap
+* City Container and Profile Container componenets
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+React.js proved to be the source of a lot of difficulty as we first started this project, because of the top to bottom data flow and React's separation of concerns. It is important to make sure components are independent, but as our application grew, so did the number of files and the information we had to keep track of. Component states and functions often had to be passed down and it was sometimes hard to keep track of everything.
+<br />
+Some of our wins were getting the user signed up and logged in and getting their information to render on their profile. Implementing all of our CRUD methods, and working out the bugs was also a big win. As we worked on these features, sometimes we found unnoticed bugs in previous parts of the code and we had to fix those issues first. 
+<br />
+Our team was very focused and we all communicated with each other very well. The size of our project allowed us to work more independently so communicating helped us delegate which tasks each person should complete. When someone needed help on their portion, we would pair or group program to get through the problem. Everyone contributed something to this project and we all brought our own areas of expertise to help each other.
+## Unsolved Problems
+* Search bar
+* Refactoring/Optimization
+* Some style elements
 
-### `npm test`
+## Code Snippets
+![](README_assets/edgecases-signup.png)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We realized that if our users submitted an empty signup form it would crash our server, so we came up with an edge case for that scenario. If any of the fields are empty then the function will break and no information will be sent to the server. We ended up resuing the same concept for other forms on our application such as logging in, creating a post, or editing a user.
+<br />
+![](README_assets/showpost-componentdidmount.png)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+To create the show page for posts, we needed to grab the post id and render it onto the next page. We couldn't pass the post id over to the new page, so we stored it in local storage and then grabbed it as the component mounted.
